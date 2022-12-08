@@ -8,69 +8,75 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACUzEoaK/BECIdkbxeyMoCAAAAAACAAAAAAADZgAAwAAAABAAAACE6h33qpXmKAmmB1uCSpMZAAAAAASAAACgAAAAEAAAAPLySRfl0Rkn06bfevkoggmAAAAAp9/9zjwMYlpj6s3qPvdWOgdsyX9GoU0LeXdNoZ5ELDZW110C6dJA1w7iO1JJFTlzNvc6h4I3tfbr1ikp2USezNiAJ7Gy7I6i9MO45+gTHlH+nAeBPGH4GoxruYYi2Xi1yP22c12aoQSj/bfIMfpswJMmD2Btdgt+lCRwHXneXW0UAAAAU3zQJRMw18x5c+g2GK4/FVe/CXk=</EncryptedPassword>
     <_PublishTargetUrl>ftp://waws-prod-am2-475.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
-    <History>True|2022-12-08T10:24:00.0683673Z;</History>
+    <History>False|2022-12-08T13:56:24.7139690Z;True|2022-12-08T14:41:15.8496022+01:00;False|2022-12-08T14:25:06.5102424+01:00;True|2022-12-08T11:24:00.0683673+01:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
+    </File>
+    <File Include="EntityFramework.dll">
+      <publishTime>04/16/2020 22:38:44</publishTime>
+    </File>
+    <File Include="EntityFramework.SqlServer.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Humanizer.dll">
-      <publishTime>06/02/2020 15:07:58</publishTime>
+      <publishTime>02/06/2020 15:07:58</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Cryptography.Internal.dll">
-      <publishTime>09/27/2022 03:36:32</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Cryptography.KeyDerivation.dll">
       <publishTime>09/27/2022 03:36:34</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll">
-      <publishTime>09/27/2022 03:37:22</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll">
-      <publishTime>09/27/2022 03:37:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Identity.UI.dll">
-      <publishTime>09/27/2022 03:38:24</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.dll">
       <publishTime>09/21/2021 01:59:32</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
-      <publishTime>09/27/2022 00:57:02</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.Design.dll">
       <publishTime>09/27/2022 00:57:50</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.dll">
-      <publishTime>09/27/2022 00:57:30</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
-      <publishTime>09/27/2022 00:57:46</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.SqlServer.dll">
-      <publishTime>09/27/2022 00:57:56</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Extensions.Caching.Memory.dll">
       <publishTime>01/14/2022 20:54:16</publishTime>
     </File>
     <File Include="Microsoft.Extensions.DependencyInjection.dll">
-      <publishTime>09/26/2022 19:42:22</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Extensions.FileProviders.Embedded.dll">
       <publishTime>09/27/2022 03:36:44</publishTime>
     </File>
     <File Include="Microsoft.Extensions.Identity.Core.dll">
-      <publishTime>09/27/2022 03:36:38</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Extensions.Identity.Stores.dll">
-      <publishTime>09/27/2022 03:36:38</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Identity.Client.dll">
-      <publishTime>10/19/2020 23:51:12</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
       <publishTime>10/13/2020 02:21:34</publishTime>
@@ -90,6 +96,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Microsoft.Win32.SystemEvents.dll">
       <publishTime>11/15/2019 09:36:56</publishTime>
     </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>01/17/2020 19:41:36</publishTime>
+    </File>
     <File Include="runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll">
       <publishTime>11/15/2019 09:56:36</publishTime>
     </File>
@@ -102,11 +111,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/20/2020 20:13:26</publishTime>
     </File>
+    <File Include="runtimes/win-arm64/native/sni.dll">
+      <publishTime>07/12/2017 13:24:24</publishTime>
+    </File>
     <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/20/2020 20:13:38</publishTime>
     </File>
+    <File Include="runtimes/win-x64/native/sni.dll">
+      <publishTime>07/12/2017 13:24:22</publishTime>
+    </File>
     <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>10/20/2020 20:13:26</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/sni.dll">
+      <publishTime>07/12/2017 13:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>01/17/2020 19:41:44</publishTime>
     </File>
     <File Include="runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll">
       <publishTime>11/15/2019 09:54:18</publishTime>
@@ -118,7 +139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/15/2019 09:54:30</publishTime>
     </File>
     <File Include="runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
-      <publishTime>09/21/2021 01:59:34</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll">
       <publishTime>11/15/2019 09:53:44</publishTime>
@@ -126,8 +147,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
       <publishTime>11/15/2019 09:53:46</publishTime>
     </File>
+    <File Include="System.CodeDom.dll">
+      <publishTime>11/15/2019 09:36:56</publishTime>
+    </File>
     <File Include="System.Configuration.ConfigurationManager.dll">
-      <publishTime>11/15/2019 09:37:04</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="System.Data.SqlClient.dll">
+      <publishTime>01/17/2020 19:28:34</publishTime>
     </File>
     <File Include="System.Drawing.Common.dll">
       <publishTime>09/18/2018 21:38:14</publishTime>
@@ -148,28 +175,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/15/2019 09:56:52</publishTime>
     </File>
     <File Include="TelstarLogistics.deps.json">
-      <publishTime>12/08/2022 11:10:34</publishTime>
+      <publishTime>12/08/2022 14:44:51</publishTime>
     </File>
     <File Include="TelstarLogistics.dll">
-      <publishTime>12/08/2022 11:10:33</publishTime>
+      <publishTime>08/12/2022 14:26:21</publishTime>
     </File>
     <File Include="TelstarLogistics.exe">
-      <publishTime>12/08/2022 11:10:33</publishTime>
+      <publishTime>12/08/2022 14:44:51</publishTime>
     </File>
     <File Include="TelstarLogistics.pdb">
-      <publishTime>12/08/2022 11:10:33</publishTime>
+      <publishTime>12/08/2022 14:44:51</publishTime>
     </File>
     <File Include="TelstarLogistics.runtimeconfig.json">
-      <publishTime>12/08/2022 11:10:34</publishTime>
+      <publishTime>12/08/2022 14:03:44</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>12/08/2022 11:10:36</publishTime>
+      <publishTime>12/08/2022 14:44:53</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/favicon.ico">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/Identity/css/site.css">
       <publishTime>09/27/2022 03:19:52</publishTime>
@@ -352,181 +379,181 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/27/2022 03:19:52</publishTime>
     </File>
     <File Include="wwwroot/js/site.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/LICENSE">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/LICENSE.txt">
-      <publishTime>12/08/2022 11:03:22</publishTime>
+      <publishTime>08/12/2022 11:03:22</publishTime>
     </File>
     <File Include="wwwroot/TelstarLogistics.styles.css">
-      <publishTime>12/08/2022 11:10:33</publishTime>
+      <publishTime>08/12/2022 11:10:33</publishTime>
     </File>
   </ItemGroup>
 </Project>
