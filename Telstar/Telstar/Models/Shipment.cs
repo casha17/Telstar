@@ -3,10 +3,10 @@
     public class Shipment
     {
         public Guid Id { get; set; }
-        public string weightInKg{ get; set; }
-        public string lengthInCm { get; set; }
-        public string widthInCm { get; set; }
-        public string heightInCm { get; set; }
+        public double weightInKg{ get; set; }
+        public double lengthInCm { get; set; }
+        public double widthInCm { get; set; }
+        public double heightInCm { get; set; }
         public DateTime timestamp { get; set; }
         public double totalCostInUSD { get; set; }
         public double paidToOAInUSD { get; set; }

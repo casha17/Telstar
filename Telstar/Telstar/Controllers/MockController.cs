@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Telstar.Data;
 using Telstar.DTOs;
 using Telstar.Models;
+using Telstar.service;
 using TelstarLogistics.service;
 using Type = System.Type;
 
@@ -15,23 +16,24 @@ namespace Telstar.Controllers
 
         private ApplicationDbContext _context;
         private IshipmentService _shipmentService;
+        private readonly IGraphingService graphingService;
 
-        public MockController(ApplicationDbContext context, IshipmentService ishipmentService)
+        public MockController(ApplicationDbContext context, IshipmentService ishipmentService, IGraphingService graphingService)
         {
             _context = context;
             _shipmentService = ishipmentService;
-
+            graphingService = graphingService;
         }
 
         [HttpGet]
         //Create a http get that takes two parameters in the request body
         public ActionResult SendEdges(string companyName, float weight, float length, float width, float height,
             string type,
-            string timestamp, bool recommended)
+            DateTime timestamp, bool recommended)
         {
 
             //Create a new shipment object 
-            Shipment shipment = new()
+            Shipment shipment = new Shipment()
             {
                 weightInKg = weight,
                 lengthInCm = length,
@@ -63,7 +65,7 @@ namespace Telstar.Controllers
             bool isOA = company.name.ToUpper() == Company.OA.name.ToUpper();
             bool allowedForEITC = shipment.weightInKg <= 100;
             bool allowedForOA = shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 &&
-                                shipment.type.name.ToLower() != Telstar.Models.Type.ANIMAL_TYPE.ToLower();
+                                shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower();
 
             //Create list of edges to send 
             var edgesToSend = new List<Edge>();
@@ -110,10 +112,10 @@ namespace Telstar.Controllers
         {
             Shipment shipment = new()
             {
-                weightInKg = "1",
-                lengthInCm = "1",
-                widthInCm = "1",
-                heightInCm = "1",
+                weightInKg = 1,
+                lengthInCm = 1,
+                widthInCm = 1,
+                heightInCm = 1,
                 timestamp = DateTime.Now,
                 type = new(){ name = Models.ShipmentType.REGULAR_TYPE }
             };

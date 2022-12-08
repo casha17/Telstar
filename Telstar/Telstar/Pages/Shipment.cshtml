@@ -1,7 +1,11 @@
 ﻿@page
 @model Telstar.Pages.ShipmentModel
-@{
+@if (!User.Identity.IsAuthenticated)
+{
+    Console.WriteLine("");
 }
+
+
 
 
 

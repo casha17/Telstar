@@ -59,8 +59,8 @@ namespace Telstar.Pages
 
             var obj = new AlgorithmResult
             {
-                Cheapest = quickest.Distance / 100.0,
-                Fastest = cheapest.Distance / 100.0 ,
+                Cheapest = cheapest.Distance / 100.0,
+                Fastest = quickest.Distance / 100.0 ,
                 shipment= shipment,
             };
 
