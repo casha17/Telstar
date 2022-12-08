@@ -1,4 +1,5 @@
-﻿using Telstar.Data;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Telstar.Data;
 using Telstar.Models;
 
 namespace TelstarLogistics.service
@@ -41,6 +42,26 @@ namespace TelstarLogistics.service
                 result.Append(Company.OA);
             }
             return result;
+        }
+
+        public double calculateAdjustedPrice(Shipment shipment, Company company, double totalPrice)
+        {
+            string typeName = shipment.type.name.ToLower();
+            if (typeName == Telstar.Models.Type.ANIMAL_TYPE)
+            {
+                totalPrice *= 1.5;
+            } else if (typeName == Telstar.Models.Type.FRAGILE_TYPE)
+            {
+                totalPrice *= 1.75;
+            } else if (typeName == Telstar.Models.Type.REFRIGERATED_TYPE)
+            {
+                totalPrice *= 1.1;
+            }
+            if (company == Company.OA)
+            {
+                totalPrice *= 1.05;
+            }
+            return totalPrice;
         }
 
         private bool isSuitableForEITC(Shipment shipment)

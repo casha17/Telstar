@@ -12,5 +12,7 @@ namespace TelstarLogistics.service
 
         public bool isSuitableForTelstar(Shipment shipment, float transportDurationInHours);
         public Company[] findAllowedExternalCompanies(Shipment shipment);
+
+        public double calculateAdjustedPrice(Shipment shipment, Company company);
     }
 }
