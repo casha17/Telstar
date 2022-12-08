@@ -24,11 +24,11 @@ namespace TelstarLogistics.service
         {
             throw new NotImplementedException();
         }
-
+        /*
         public bool isSuitableForTelstar (Shipment shipment, float transportDurationInHours)
         {
             return shipment.weightInKg <= 40 && (shipment.type.name.ToLower() == Telstar.Models.Type.ANIMAL_TYPE.ToLower() ? transportDurationInHours <= 30 : true);
-        }
+        }*/
 
         public Company[] findAllowedExternalCompanies(Shipment shipment)
         {
