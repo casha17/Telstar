@@ -6,7 +6,7 @@ namespace TelstarLogistics.service
     {
         public Shipment CreateShipment(Shipment shipment);
 
-        public List<destination> GetDestination();
+        public List<Destination> GetDestination();
 
         public List<string> GetRutes();
     }

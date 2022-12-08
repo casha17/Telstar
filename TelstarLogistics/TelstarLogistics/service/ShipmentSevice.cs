@@ -9,7 +9,7 @@ namespace TelstarLogistics.service
             throw new NotImplementedException();
         }
 
-        public List<destination> GetDestination()
+        public List<Destination> GetDestination()
         {
             throw new NotImplementedException();
         }
