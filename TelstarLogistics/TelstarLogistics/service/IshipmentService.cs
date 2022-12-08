@@ -9,5 +9,8 @@ namespace TelstarLogistics.service
         public List<Destination> GetDestination();
 
         public List<string> GetRutes();
+
+        public bool isSuitableForTelstar(Shipment shipment, float transportDurationInHours);
+        public Company[] findAllowedExternalCompanies(Shipment shipment);
     }
 }
