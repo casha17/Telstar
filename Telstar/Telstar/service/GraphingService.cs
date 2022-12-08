@@ -37,7 +37,8 @@ public class GraphingService : IGraphingService
 
         foreach (Models.Edge edge in edges)
         {
-            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.From), cityIndexDictionary.GetValueOrDefault(edge.From), (int) edge.Cost * 100, "Cost");
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.From), cityIndexDictionary.GetValueOrDefault(edge.To), (int) edge.Cost * 100, "Cost");
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.To), cityIndexDictionary.GetValueOrDefault(edge.From), (int) edge.Cost * 100, "Cost");
         }
         return graph;
 
@@ -50,7 +51,8 @@ public class GraphingService : IGraphingService
 
         foreach (Models.Edge edge in edges)
         {
-            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.From), cityIndexDictionary.GetValueOrDefault(edge.From), (int)edge.TimeHours * 100, "Cost");
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.From), cityIndexDictionary.GetValueOrDefault(edge.To), (int)edge.TimeHours * 100, "Time");
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.To), cityIndexDictionary.GetValueOrDefault(edge.From), (int)edge.TimeHours * 100, "Time");
         }
         return graph;
 

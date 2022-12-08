@@ -14,9 +14,9 @@ namespace Telstar.Controllers
     {
 
         IshipmentService shipmentService;
-        GraphingService graphingService;
+        IGraphingService graphingService;
 
-        public MockController(IshipmentService shipmentService, GraphingService graphingService) {
+        public MockController(IshipmentService shipmentService, IGraphingService graphingService) {
             this.shipmentService = shipmentService;
             this.graphingService = graphingService;
         }
@@ -50,6 +50,8 @@ namespace Telstar.Controllers
                 widthInCm = 1,
                 heightInCm = 1,
                 timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(),
+                type = new(){
+                    name = Models.Type.REGULAR_TYPE }
             };
             String from = "tripoli";
             String to = "tunis";
