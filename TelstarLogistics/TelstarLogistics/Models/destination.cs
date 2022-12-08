@@ -6,7 +6,7 @@
 
         public Guid Id { get; set; }
 
-        public List<Edge> FromEdges { get; set; }
-        public List<Edge> ToEdges { get; set; }
+        //public List<Edge> FromEdges { get; set; }
+        //public List<Edge> ToEdges { get; set; }
     }
 }

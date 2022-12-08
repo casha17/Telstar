@@ -1,9 +1,14 @@
-﻿using TelstarLogistics.Models;
+﻿using TelstarLogistics.Data;
+using TelstarLogistics.Models;
 
 namespace TelstarLogistics.service
 {
     public class ShipmentSevice : IshipmentService
     {
+        private readonly ApplicationDbContext _dbContext;
+        public ShipmentSevice(ApplicationDbContext dbContext) {
+            _dbContext= dbContext;
+        }
         public Shipment CreateShipment(Shipment shipment)
         {
             throw new NotImplementedException();
@@ -11,7 +16,7 @@ namespace TelstarLogistics.service
 
         public List<Destination> GetDestination()
         {
-            throw new NotImplementedException();
+            return _dbContext.destinations.ToList();
         }
 
         public List<string> GetRutes()
