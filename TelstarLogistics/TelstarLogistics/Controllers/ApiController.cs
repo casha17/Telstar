@@ -1,12 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TelstarLogistics.Data;
+using TelstarLogistics.DTOs;
 
 namespace TelstarLogistics.Controllers;
 
-public class ApiController : Controller
+public class ApiController : ControllerBase
 {
-    // GET
-    public IActionResult Index()
+
+    [Route("api/edges")]
+    [HttpGet]
+    public ActionResult GetMockData()
     {
-        return View();
+
+        List<EdgeResponseDTO> mockData = new List<EdgeResponseDTO>
+        {
+            new EdgeResponseDTO
+            {
+                City1 = "tunis",
+                City2 = "tripoli",
+                CostInUSD = 9,
+                TimeInHours = 12
+            }
+        };
+        return Ok(mockData);
     }
 }
