@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Telstar.Data;
+using Telstar.service;
 using TelstarLogistics.service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IshipmentService, ShipmentSevice>();
+builder.Services.AddTransient<IGraphingService, GraphingService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
