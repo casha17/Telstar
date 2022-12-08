@@ -47,13 +47,13 @@ namespace TelstarLogistics.service
         public double calculateAdjustedPrice(Shipment shipment, Company company, double totalPrice)
         {
             string typeName = shipment.type.name.ToLower();
-            if (typeName == Telstar.Models.Type.ANIMAL_TYPE)
+            if (typeName == Telstar.Models.ShipmentType.ANIMAL_TYPE)
             {
                 totalPrice *= 1.5;
-            } else if (typeName == Telstar.Models.Type.FRAGILE_TYPE)
+            } else if (typeName == Telstar.Models.ShipmentType.FRAGILE_TYPE)
             {
                 totalPrice *= 1.75;
-            } else if (typeName == Telstar.Models.Type.REFRIGERATED_TYPE)
+            } else if (typeName == Telstar.Models.ShipmentType.REFRIGERATED_TYPE)
             {
                 totalPrice *= 1.1;
             }
@@ -66,12 +66,12 @@ namespace TelstarLogistics.service
 
         private bool isSuitableForEITC(Shipment shipment)
         {
-            return shipment.weightInKg <= 100;
+            return true; //shipment.weightInKg <= 100;
         }
 
         private bool isSuitableForOA(Shipment shipment)
         {
-            return shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 && shipment.type.name.ToLower() != Telstar.Models.Type.ANIMAL_TYPE.ToLower() ;
+            return true;// shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 && shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() ;
         }
     }
 }

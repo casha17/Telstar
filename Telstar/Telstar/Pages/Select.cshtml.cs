@@ -5,20 +5,15 @@ using Telstar.Models;
 
 namespace Telstar.Pages
 {
-    public class SummaryModel : PageModel
+    public class SelectModel : PageModel
     {
         [BindProperty]
         public AlgorithmResult AlgorithmResult { get; set; }
-
         public void OnGet()
         {
             var data = TempData["path"] as string;
             AlgorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(data);
-        }
-
-        public IActionResult OnPost()
-        {
-            return RedirectToPage("/Index");
+            
         }
     }
 }

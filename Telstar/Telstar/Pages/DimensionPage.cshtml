@@ -4,31 +4,32 @@
 }
 
 <h5 class="card-title">Enter Dimensions Page</h5>
+<form method="post">
 <div class="row align-items-start spacer">
     <div class="col spacer">
         <h6>Enter Height</h6>
         <div class="input-group mb-3">
-            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input name="height" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">cm</span>
         </div>
         <h6>Enter length</h6>
         <div class="input-group mb-3">
-            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input name="length" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">cm</span>
         </div>
         <h6>Enter Width</h6>
         <div class="input-group mb-3">
-            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input name="width" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">cm</span>
         </div>
         <h6>Enter Weight</h6>
-        <div class="input-group mb-3">
-            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <div  class="input-group mb-3">
+            <input name="weight" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">kg</span>
         </div>
         <tr>
             <button type="button" class="btn btn-secondary spacer">back</button>
-            <button type="button" class="btn btn-warning spacer">Continue</button>
+            <button type="submit" class="btn btn-warning spacer">Continue</button>
         </tr>
     </div>
     <div class="col">
@@ -37,3 +38,4 @@
         </center>
     </div>
 </div>
+</form>

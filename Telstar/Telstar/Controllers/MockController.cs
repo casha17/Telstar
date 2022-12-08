@@ -45,13 +45,12 @@ namespace Telstar.Controllers
         {
             Shipment shipment = new()
             {
-                weightInKg = 1,
-                lengthInCm = 1,
-                widthInCm = 1,
-                heightInCm = 1,
-                timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(),
-                type = new(){
-                    name = Models.Type.REGULAR_TYPE }
+                weightInKg = "1",
+                lengthInCm = "1",
+                widthInCm = "1",
+                heightInCm = "1",
+                timestamp = DateTime.Now,
+                type = new(){ name = Models.ShipmentType.REGULAR_TYPE }
             };
             String from = "tripoli";
             String to = "tunis";

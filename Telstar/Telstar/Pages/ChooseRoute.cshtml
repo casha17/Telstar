@@ -15,8 +15,15 @@
         </Center>
         <div class="card-body">
             <h5 class="card-title">Fastest Route</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Pick fastest route</a>
+            <div style="display:flex;">
+                <p class="card-text">Price:@Html.DisplayFor(e => e.AlgorithmResult.Fastest) </p> <p style="padding-left:10px" name="price"></p><p class="card-text">Time:</p> <p style="padding-left:10px" name="time"></p>
+            </div>
+     
+            <form method="post" asp-page-handler="Fastest">
+
+
+                <button type="submit" class="btn btn-primary">Pick Fasteset route</button>
+            </form>
         </div>
     </div>
 
@@ -28,8 +35,14 @@
         </Center>
         <div class="card-body">
             <h5 class="card-title">Cheapest route</h5>
-            <p class="card-text">Price</p>
-            <a href="#" class="btn btn-primary">Pick cheapest route</a>
+              <div style="display:flex;">
+                <p class="card-text">Price:@Html.DisplayFor(e => e.AlgorithmResult.Fastest) </p> <p style="padding-left:10px" name="price"></p><p class="card-text">Time:</p> <p style="padding-left:10px" name="time"></p>
+            </div>
+            <form method="post" asp-page-handler="Cheapest">
+
+           
+            <button type="submit" class="btn btn-primary">Pick cheapest route</button>
+            </form>
 
         </div>
     </div>

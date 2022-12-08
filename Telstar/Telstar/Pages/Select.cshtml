@@ -1,0 +1,45 @@
+﻿@page
+@model Telstar.Pages.SelectModel
+@{
+}
+
+
+<h3>Select which one</h3>
+
+
+<main class="container">
+	<section class="movies" id="movies">
+		<h2>Der er følgende muligheder</h2>
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<article class="card">
+					<header class="title-header">
+						<h3>Fastest Route</h3>
+					</header>
+					<div class="card-block">
+						<div class="img-card">
+					
+						</div>
+						<p class="tagline card-text text-xs-center">This is the fasteset route. It takes @Html.DisplayFor(e => e.AlgorithmResult.Fastest) hours </p>
+						<a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i>Book Shipment</a>
+					</div>
+				</article>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<article class="card">
+					<header class="title-header">
+						<h3>Cheapest route</h3>
+					</header>
+					<div class="card-block">
+						<div class="img-card">
+						
+						</div>
+						<p class="tagline card-text text-xs-center">This is the cheapest route. It costs @Html.DisplayFor(e => e.AlgorithmResult.Cheapest) USD </p>
+						<a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i>Book Shipment</a>
+					</div>
+				</article>
+			</div>
+
+			
+		</div>
+	</section>
