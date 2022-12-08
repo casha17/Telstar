@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
+using System.Reflection.Emit;
 using Telstar.Models;
+using static Humanizer.In;
 
 namespace Telstar.Data
 {
@@ -18,14 +19,35 @@ namespace Telstar.Data
         {
         }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Destination>()
+                .HasMany(e => e.FromEdges)
+                .WithOne(e => e.fromDestination)
+                .HasForeignKey(e => e.fromDestinationId);
+
+            builder.Entity<Destination>()
+            .HasMany(e => e.ToEdges)
+            .WithOne(e => e.toDestination)
+            .HasForeignKey(e => e.toDestinationId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            var addisId = Guid.Parse("0224c301-4a94-48f6-8df8-f27568583cf4");
+            var addisName = "Addis Abeba";
+            var VictoriaSoeenId = Guid.Parse("7a4aee29-b0a5-45db-90dc-3756abc449ec");
+            var victoriName = "Victoria Soeen";
+
+
+            
+
             builder.Entity<Destination>()
                 .HasData(
                 new Destination()
                 {
-                    Id = Guid.NewGuid(),
-                    City = "Addis Abeba"
+                    Id = addisId,
+                    City = addisName
+                    
 
                 }, new Destination()
                 {
@@ -141,7 +163,7 @@ namespace Telstar.Data
                     City = "Victoria Faldene"
                 }, new Destination()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = VictoriaSoeenId,
                     City = "Victoria Soeen"
                 }, new Destination()
                 {
@@ -152,6 +174,20 @@ namespace Telstar.Data
                     Id = Guid.NewGuid(),
                     City = "Zanzibar"
                 });
+
+
+            builder.Entity<Edge>().HasData(
+               new Edge() {
+                Cost= 12,
+                From = addisName,
+                To = victoriName,
+                fromDestinationId = addisId,
+                toDestinationId = VictoriaSoeenId,
+                Id = Guid.NewGuid(),
+                TimeHours= 12,
+                }
+            );
+
             base.OnModelCreating(builder);
         }
     }

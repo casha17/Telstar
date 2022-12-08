@@ -12,8 +12,8 @@ using Telstar.Data;
 namespace Telstar.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221208175257_initial")]
-    partial class initial
+    [Migration("20221208190912_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -243,162 +243,162 @@ namespace Telstar.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6b506485-0810-40db-825e-459a4d54276c"),
+                            Id = new Guid("0224c301-4a94-48f6-8df8-f27568583cf4"),
                             City = "Addis Abeba"
                         },
                         new
                         {
-                            Id = new Guid("7aaeaa6a-a259-4930-a9f3-f16301fc02dc"),
+                            Id = new Guid("1cd2894a-d5a0-4625-8bc2-0c5490e214e3"),
                             City = "Amatave"
                         },
                         new
                         {
-                            Id = new Guid("86d72425-94e7-47c2-a129-d457583cbc51"),
+                            Id = new Guid("7765213e-1922-423e-a5ae-da28e4097ac0"),
                             City = "Bahr El Ghazal"
                         },
                         new
                         {
-                            Id = new Guid("14d15128-1d2c-46b9-bc35-6612cdba158a"),
+                            Id = new Guid("c51750b7-1323-461c-ac86-7c9bdf56bc2f"),
                             City = "Cairo"
                         },
                         new
                         {
-                            Id = new Guid("bfbf440f-bb9a-46b6-9c2e-b68fe643d728"),
+                            Id = new Guid("b65a83f8-2607-4abd-8885-e9c29f20a069"),
                             City = "Congo"
                         },
                         new
                         {
-                            Id = new Guid("801e26e3-03bc-432a-a988-ced63192863b"),
+                            Id = new Guid("c0c0ba05-6866-49b1-8523-9a0f62c495ff"),
                             City = "Dakar"
                         },
                         new
                         {
-                            Id = new Guid("f789af7b-c20b-4ac6-b471-b297d9b49519"),
+                            Id = new Guid("670ba475-8ae7-434b-893c-376ce9a48264"),
                             City = "Darfur"
                         },
                         new
                         {
-                            Id = new Guid("205106c8-9e8f-4077-b9ef-74279210aa6b"),
+                            Id = new Guid("aead90a5-4003-43fc-9045-0a3ae289bb52"),
                             City = "De Kanariske Oerne"
                         },
                         new
                         {
-                            Id = new Guid("d2bfe8e3-a3de-4d98-98dd-a688858264f5"),
+                            Id = new Guid("07318326-2642-488f-8bef-fd14f284535e"),
                             City = "Dragebjerget"
                         },
                         new
                         {
-                            Id = new Guid("7c553628-0b76-4057-a8ef-54941fc86537"),
+                            Id = new Guid("d6c6c34c-b434-4664-a8ec-98919e7e2397"),
                             City = "Guldkysten"
                         },
                         new
                         {
-                            Id = new Guid("8ef070ed-0f78-4042-8578-b0489632cf6c"),
+                            Id = new Guid("bb46185e-79e2-47c7-bce1-ffc89a7818e6"),
                             City = "Hvalbugten"
                         },
                         new
                         {
-                            Id = new Guid("1f1aa69e-36a3-462e-9065-5375155845c4"),
+                            Id = new Guid("74ea4fcf-c9d3-4ee4-9973-4794409ee32e"),
                             City = "Kabalo"
                         },
                         new
                         {
-                            Id = new Guid("a9017527-af3d-4769-8618-f190831c6416"),
+                            Id = new Guid("d6fec231-cdab-484b-abbf-607aca5f7a4b"),
                             City = "Kap Guardafui"
                         },
                         new
                         {
-                            Id = new Guid("a2d3c517-15a6-4888-989b-342e23642d50"),
+                            Id = new Guid("a7f054d5-253a-487b-92cd-59720cad5582"),
                             City = "Kap St. Marie"
                         },
                         new
                         {
-                            Id = new Guid("918e1f3d-d2c3-420a-8efb-3b1bfe934dcb"),
+                            Id = new Guid("ef2a1edf-fee7-4196-a602-7aa7f3ab2120"),
                             City = "Kapstaden"
                         },
                         new
                         {
-                            Id = new Guid("3a70a4f1-6114-412b-9a0f-b72a9f14a070"),
+                            Id = new Guid("19e528f1-3ad3-4d76-bfd7-72f41bac5f72"),
                             City = "Luanda"
                         },
                         new
                         {
-                            Id = new Guid("924a8322-beb2-460d-b01f-3f06881da2e0"),
+                            Id = new Guid("a9033b27-2571-4ce7-95d7-0c7407bbafd5"),
                             City = "Marrakesh"
                         },
                         new
                         {
-                            Id = new Guid("fc1ead62-3529-4d82-840b-2000ce78af57"),
+                            Id = new Guid("85bdd99f-e1ec-42d3-8ea3-41a396522dd3"),
                             City = "Mocambique"
                         },
                         new
                         {
-                            Id = new Guid("0564ca18-c65d-4753-ad3e-ac8beabe577b"),
+                            Id = new Guid("d39e48cf-c3a3-4ef2-a1c8-aba7a34e0e53"),
                             City = "Omdurman"
                         },
                         new
                         {
-                            Id = new Guid("e4a9199f-eb80-4bb1-a149-ff255046de06"),
+                            Id = new Guid("7abfb28a-949b-4bb9-bd50-45c04af944a8"),
                             City = "Sahara"
                         },
                         new
                         {
-                            Id = new Guid("ae51a8af-b9c9-4494-aabc-4c039329f0be"),
+                            Id = new Guid("ae9bf889-10eb-4cbf-b885-aac0f2cb0194"),
                             City = "Sierra Leone"
                         },
                         new
                         {
-                            Id = new Guid("03a86ab3-9186-4c2c-8793-51e61d0d2c62"),
+                            Id = new Guid("20807d44-7cf0-4d3e-aca6-3110d5a235da"),
                             City = "Slavekysten"
                         },
                         new
                         {
-                            Id = new Guid("ff9aaf09-da42-420e-801e-515c10abe01d"),
+                            Id = new Guid("01d7f120-d7d9-49bc-a506-a80cce326ec5"),
                             City = "St. Helena"
                         },
                         new
                         {
-                            Id = new Guid("7281729d-a680-487b-9d3a-bf4f0e45dd63"),
+                            Id = new Guid("d3cc2d37-7dca-4f08-912c-c3f0155be93d"),
                             City = "Suakin"
                         },
                         new
                         {
-                            Id = new Guid("309eabe2-4015-44ea-99e3-f8206510d679"),
+                            Id = new Guid("1b470316-2a4a-4333-b7a2-78b4d9a25957"),
                             City = "Tanger"
                         },
                         new
                         {
-                            Id = new Guid("450243a1-dd52-4b93-a314-933d095e5ca6"),
+                            Id = new Guid("156f957a-b6c5-4986-b5ae-3de2f66b272f"),
                             City = "Timbuktu"
                         },
                         new
                         {
-                            Id = new Guid("ac6caebb-f9ff-4fdd-91c1-928a1b70e43d"),
+                            Id = new Guid("14f4fcba-bc07-4dab-9dcf-6c78953b3248"),
                             City = "Tripoli"
                         },
                         new
                         {
-                            Id = new Guid("7000c9d3-ebe9-44b5-b083-e7f9076db2df"),
+                            Id = new Guid("46252414-e5e7-4df3-ab22-7e4fe0604cbf"),
                             City = "Tunis"
                         },
                         new
                         {
-                            Id = new Guid("8676f27d-94c4-49a0-8002-02a807cde6f7"),
+                            Id = new Guid("5a7a1777-c127-435c-bbb3-7855ff40ae9e"),
                             City = "Victoria Faldene"
                         },
                         new
                         {
-                            Id = new Guid("ceb8aa1a-5824-4dd7-ae7c-e1d02dbe95bf"),
+                            Id = new Guid("7a4aee29-b0a5-45db-90dc-3756abc449ec"),
                             City = "Victoria Soeen"
                         },
                         new
                         {
-                            Id = new Guid("07c12bde-1ef7-44f7-ac95-73a9fffff529"),
+                            Id = new Guid("edf4987f-4dad-46a5-901e-f70d7f149c6c"),
                             City = "Wadai"
                         },
                         new
                         {
-                            Id = new Guid("f3efd3cb-26b0-4d3e-89ed-549fb3a3d64e"),
+                            Id = new Guid("7a81a4a1-e0c8-405e-8352-02f484a8cee2"),
                             City = "Zanzibar"
                         });
                 });
@@ -423,9 +423,31 @@ namespace Telstar.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("fromDestinationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("toDestinationId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("fromDestinationId");
+
+                    b.HasIndex("toDestinationId");
+
                     b.ToTable("edges");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a6b804d3-58ac-4870-885d-3a563a64a65d"),
+                            Cost = 12.0,
+                            From = "Addis Abeba",
+                            TimeHours = 12.0,
+                            To = "Victoria Soeen",
+                            fromDestinationId = new Guid("0224c301-4a94-48f6-8df8-f27568583cf4"),
+                            toDestinationId = new Guid("7a4aee29-b0a5-45db-90dc-3756abc449ec")
+                        });
                 });
 
             modelBuilder.Entity("Telstar.Models.Shipment", b =>
@@ -538,6 +560,25 @@ namespace Telstar.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Telstar.Models.Edge", b =>
+                {
+                    b.HasOne("Telstar.Models.Destination", "fromDestination")
+                        .WithMany("FromEdges")
+                        .HasForeignKey("fromDestinationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Telstar.Models.Destination", "toDestination")
+                        .WithMany("ToEdges")
+                        .HasForeignKey("toDestinationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("fromDestination");
+
+                    b.Navigation("toDestination");
+                });
+
             modelBuilder.Entity("Telstar.Models.Shipment", b =>
                 {
                     b.HasOne("Telstar.Models.Type", "type")
@@ -547,6 +588,13 @@ namespace Telstar.Migrations
                         .IsRequired();
 
                     b.Navigation("type");
+                });
+
+            modelBuilder.Entity("Telstar.Models.Destination", b =>
+                {
+                    b.Navigation("FromEdges");
+
+                    b.Navigation("ToEdges");
                 });
 
             modelBuilder.Entity("Telstar.Models.Type", b =>
