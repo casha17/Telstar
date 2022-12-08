@@ -1,6 +1,6 @@
 ﻿namespace Telstar.Models
 {
-    public class Type
+    public class ShipmentType
     {
         public static string ANIMAL_TYPE = "animal";
         public static string FRAGILE_TYPE = "fragile";
