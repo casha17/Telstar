@@ -3,17 +3,19 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TelstarLogistics.Data;
 
 #nullable disable
 
-namespace TelstarLogistics.Data.Migrations
+namespace TelstarLogistics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221208125148_inistial")]
+    partial class inistial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -224,17 +226,58 @@ namespace TelstarLogistics.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TelstarLogistics.Models.Shipment", b =>
+            modelBuilder.Entity("TelstarLogistics.Models.Destination", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
+                    b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("destinations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("93f6b51e-956a-4200-8f31-80f0b8a75743"),
+                            City = "Tripoli"
+                        });
+                });
+
+            modelBuilder.Entity("TelstarLogistics.Models.Shipment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("heightInCm")
+                        .HasColumnType("float");
+
+                    b.Property<double>("lengthInCm")
+                        .HasColumnType("float");
+
+                    b.Property<double>("paidToEICInUSD")
+                        .HasColumnType("float");
+
+                    b.Property<double>("paidToOAInUSD")
+                        .HasColumnType("float");
+
+                    b.Property<string>("timestamp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("totalCostInUSD")
+                        .HasColumnType("float");
+
+                    b.Property<double>("weightInKg")
+                        .HasColumnType("float");
+
+                    b.Property<double>("widthInCm")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
