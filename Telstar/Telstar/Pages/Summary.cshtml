@@ -8,7 +8,7 @@
         <Center>
             <ul class="list-group" style="width:300px">
                 <li class="list-group-item summary-listitem"><p class="summary-p">From: @Html.DisplayFor(e => e.AlgorithmResult.shipment.from)</p><p class="summary-pr" name="fromDest"></p><p class="summary-p">To: @Html.DisplayFor(e => e.AlgorithmResult.shipment.to)</p><p class="summary-pr" name="toDest"></p></li>
-                <li class="list-group-item summary-listitem"><p class="summary-p">Time: @Html.DisplayFor(e => e.AlgorithmResult.Cheapest)</p><p class="summary-pr" name="time"></p><p class="summary-p">Price:</p><p class="summary-pr" name="price"></p></li>
+                <li class="list-group-item summary-listitem"><p class="summary-p">Time: @Html.DisplayFor(e => e.AlgorithmResult.Fastest)</p><p class="summary-pr" name="time"></p><p class="summary-p">Price:@Html.DisplayFor(e => e.AlgorithmResult.Cheapest) </p><p class="summary-pr" name="price"></p></li>
             </ul>
         </Center>
         <button type="button" class="btn btn-secondary spacer">Back</button>

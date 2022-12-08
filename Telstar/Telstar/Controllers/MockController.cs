@@ -65,7 +65,7 @@ namespace Telstar.Controllers
             bool isOA = company.name.ToUpper() == Company.OA.name.ToUpper();
             bool allowedForEITC = shipment.weightInKg <= 100;
             bool allowedForOA = shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 &&
-                                shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower();
+                                shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() && shipment.type.name.ToLower() != Telstar.Models.ShipmentType.WEAPONS_TYPE;
 
             //Create list of edges to send 
             var edgesToSend = new List<Edge>();
@@ -83,12 +83,25 @@ namespace Telstar.Controllers
                 }
             }
 
-            return Ok(edgesToSend);
+            var integrationViewModels = new List<IntegrationViewModel>();
+            foreach (var edge in edgesToSend)
+            {
+                integrationViewModels.Add(new IntegrationViewModel
+                {
+                    city1 = edge.From,
+                    city2 = edge.To,
+                    costInUSD = edge.Cost,
+                    timeInHours = edge.TimeHours
+                });
+            }
+
+            return Ok(integrationViewModels);
         }
 
 
 
         [HttpGet]
+        [Route("/mock")]
         public ActionResult GetMockData()
         {
 

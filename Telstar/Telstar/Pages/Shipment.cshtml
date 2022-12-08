@@ -1,77 +1,82 @@
 ﻿@page
 @model Telstar.Pages.ShipmentModel
-@if (!User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
 {
-    Console.WriteLine("");
+    <h5 class="card-title">Enter Information Page</h5>
+    <form method="post">
+    <div class="row align-items-start spacer">
+        <div class="col">
+            <h6 st>From:</h6>
+            <select class="form-select" name="fromDestination" aria-label="Default select example" placeholder="Select a destination">
+                    @foreach (var x in Model.destinations)
+                    {
+                            <option value="@x">@x</option>
+                    }
+            </select>
+            <div style="padding-top:20px">
+                <h6>Select date of sending parcel:</h6>
+                <input style="width:100%" type="date" id="start" name="tripStart"
+                   value="2018-07-22"
+                   min="2018-01-01" max="2018-12-31">
+            </div>
+            <div style="padding-top:20px">
+                <h6>View map:</h6>
+                <img src="img\map.png" style="width:400px; padding-left:100px">
+            </div>
+            <button type="submit" class="btn btn-warning spacer">Continue</button>
+        </div>
+        <div class="col-md-auto spacer">
+            >
+        </div>
+        <div class="col">
+            <h6>To:</h6>
+                <select class="form-select" name="toDestination" aria-label="Default select example" placeholder="Select a destination">
+                    @foreach (var x in Model.destinations)
+                    {
+                            <option value="@x">@x</option>
+                    }
+            </select>
+            <div class="card spacer ">
+                <div class="card-body">
+                    <h6>Select parcel type</h6>
+                    <div class="form-check spacer">
+                        <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios1" value="Regular" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Regular parcel
+                        </label>
+                    </div>
+                    <div class="form-check">
+                            <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios2" value="Refrigerated">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Refrigerated parcel
+                        </label>
+                    </div>
+                    <div class="form-check">
+                            <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios3" value="Fragile">
+                        <label class="form-check-label" for="exampleRadios3">
+                            Fragile parcel
+                        </label>
+                    </div>
+                    <div class="form-check">
+                            <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios4" value="Animal">
+                        <label class="form-check-label" for="exampleRadios4">
+                            Animal parcel
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+}else
+{
+    <h3>Not Authenticated</h3>
+
 }
 
 
 
 
 
-<h5 class="card-title">Enter Information Page</h5>
-<form method="post">
-<div class="row align-items-start spacer">
-    <div class="col">
-        <h6 st>From:</h6>
-        <select class="form-select" name="fromDestination" aria-label="Default select example" placeholder="Select a destination">
-                @foreach (var x in Model.destinations)
-                {
-                    <option value="@x">@x</option>
-                }
-        </select>
-        <div style="padding-top:20px">
-            <h6>Select date of sending parcel:</h6>
-            <input style="width:100%" type="date" id="start" name="tripStart"
-                   value="2018-07-22"
-                   min="2018-01-01" max="2018-12-31">
-        </div>
-        <div style="padding-top:20px">
-            <h6>View map:</h6>
-            <img src="img\map.png" style="width:400px; padding-left:100px">
-        </div>
-        <button type="submit" class="btn btn-warning spacer">Continue</button>
-    </div>
-    <div class="col-md-auto spacer">
-        >
-    </div>
-    <div class="col">
-        <h6>To:</h6>
-            <select class="form-select" name="toDestination" aria-label="Default select example" placeholder="Select a destination">
-                @foreach (var x in Model.destinations)
-                {
-                    <option value="@x">@x</option>
-                }
-        </select>
-        <div class="card spacer ">
-            <div class="card-body">
-                <h6>Select parcel type</h6>
-                <div class="form-check spacer">
-                    <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios1" value="Regular" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Regular parcel
-                    </label>
-                </div>
-                <div class="form-check">
-                        <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios2" value="Refrigerated">
-                    <label class="form-check-label" for="exampleRadios2">
-                        Refrigerated parcel
-                    </label>
-                </div>
-                <div class="form-check">
-                        <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios3" value="Fragile">
-                    <label class="form-check-label" for="exampleRadios3">
-                        Fragile parcel
-                    </label>
-                </div>
-                <div class="form-check">
-                        <input class="form-check-input" type="radio" name="typeRadios" id="exampleRadios4" value="Animal">
-                    <label class="form-check-label" for="exampleRadios4">
-                        Animal parcel
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</form>
+

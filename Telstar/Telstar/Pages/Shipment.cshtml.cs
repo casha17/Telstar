@@ -56,6 +56,7 @@ namespace Telstar.Pages
 
             var quickest =  graphingService1.getQuickestPath(shipment, toDestination, fromDestination);
             var cheapest =  graphingService1.getCheapestPath(shipment, toDestination, fromDestination);
+            var path = quickest.GetPath();
 
             var obj = new AlgorithmResult
             {
