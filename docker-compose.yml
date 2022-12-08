@@ -1,11 +1,15 @@
-version: "3.2"
+version: '3.8'
 services:
-
-  sql-server-db:
-    container_name: sql-server-db
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    ports:
-      - "1433:1433"
+  db:
+    image: postgres:14.1-alpine
+    restart: always
     environment:
-      MSSQL_SA_PASSWORD: "password"
-      ACCEPT_EULA: "Y"
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
