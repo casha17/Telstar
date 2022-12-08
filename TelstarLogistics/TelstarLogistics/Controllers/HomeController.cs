@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using TelstarLogistics.Models;
 
@@ -8,13 +9,18 @@ namespace TelstarLogistics.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        private DbContext dbContext { get; set; }
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+
+            
         }
 
         public IActionResult Index()
         {
+
             return View();
         }
 

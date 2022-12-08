@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
+using TelstarLogistics.Models;
+
 namespace TelstarLogistics.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -9,5 +11,7 @@ namespace TelstarLogistics.Data
             : base(options)
         {
         }
+
+        public DbSet<Shipment> shipments { get; set; }
     }
 }
