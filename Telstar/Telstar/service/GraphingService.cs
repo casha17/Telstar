@@ -1,80 +1,127 @@
 ﻿using Dijkstra.NET.Graph;
-using Dijkstra.NET.Graph.Simple;
 using Dijkstra.NET.ShortestPath;
 using Telstar.Data;
+using Telstar.Models;
+using TelstarLogistics.service;
 
 namespace Telstar.service;
 
 
-public class GraphingService
+public class GraphingService : IGraphingService
 {
     private ApplicationDbContext _context;
-    public GraphingService(ApplicationDbContext context)
+    private IshipmentService shipmentService;
+    public GraphingService(ApplicationDbContext context, IshipmentService shipmentService)
     {
         _context = context;
+        this.shipmentService = shipmentService;
     }
 
-    public Graph<string,string> buildGraph(bool isUsingCost)
+    public Graph<uint, string> buildGraph(Shipment shipment, List<Destination> cities)
     {
 
+        // Create a new Graph object
+        var graph = new Graph<uint, string>();
+
+        //Add all of the cities as nodes to the graph
+        for (uint i=0;i<cities.Count;i++)
+        {
+            graph.AddNode(i);
+        }
+        return graph;
+    }
+
+    public Graph<uint, string> connectLowestCostGraph(Graph<uint, string> graph, Dictionary<String, uint> cityIndexDictionary, Shipment shipment)
+    {
+        var edges = this.findEdges(shipment);
+
+        foreach (Models.Edge edge in edges)
+        {
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.From), cityIndexDictionary.GetValueOrDefault(edge.To), (int) edge.Cost * 100, "Cost");
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.To), cityIndexDictionary.GetValueOrDefault(edge.From), (int) edge.Cost * 100, "Cost");
+        }
+        return graph;
+
+    }
+
+
+    public Graph<uint, string> connectShortestTimeGraph(Graph<uint, string> graph, Dictionary<String, uint> cityIndexDictionary, Shipment shipment)
+    {
+        var edges = this.findEdges(shipment);
+
+        foreach (Models.Edge edge in edges)
+        {
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.From), cityIndexDictionary.GetValueOrDefault(edge.To), (int)edge.TimeHours * 100, "Time");
+            graph.Connect(cityIndexDictionary.GetValueOrDefault(edge.To), cityIndexDictionary.GetValueOrDefault(edge.From), (int)edge.TimeHours * 100, "Time");
+        }
+        return graph;
+
+    }
+
+    public List<Models.Edge> getEIedges()
+    {
+        //Contruct the API call with parameters needed
+        return new List<Models.Edge>();
+    }
+
+    public List<Models.Edge> getOAedges()
+    {
+        //Contruct the API call with parameters needed
+        return new List<Models.Edge>();
+    }
+
+    public ShortestPathResult getCheapestPath(Shipment shipment, string from, string to)
+    {
+
+
         //Fetch the cities (nodes) from the database
-        var cities = _context.destinations.ToList();
+        var cities = shipmentService.GetDestination();
+        Dictionary<String, uint> cityIndexDictionary = new Dictionary<String, uint>();
+        for (uint i = 0; i < cities.Count; i++)
+        {
+            cityIndexDictionary.Add(cities[(int)i].City, i);
+        }
+        var graph = this.buildGraph(shipment, cities);
+        var connectedGraph = this.connectLowestCostGraph(graph, cityIndexDictionary, shipment);
+        var path = connectedGraph.Dijkstra(cityIndexDictionary.GetValueOrDefault(from), cityIndexDictionary.GetValueOrDefault(to));
+        return path;
+    }
+
+
+    public ShortestPathResult getQuickestPath(Shipment shipment, string from, string to)
+    {
+
+
+        //Fetch the cities (nodes) from the database
+        var cities = shipmentService.GetDestination();
+        Dictionary<String, uint> cityIndexDictionary = new Dictionary<String, uint>();
+        for (uint i = 0; i < cities.Count; i++)
+        {
+            cityIndexDictionary.Add(cities[(int)i].City, i);
+        }
+        var graph = this.buildGraph(shipment, cities);
+        var connectedGraph = this.connectShortestTimeGraph(graph, cityIndexDictionary, shipment);
+        var path = connectedGraph.Dijkstra(cityIndexDictionary.GetValueOrDefault(from), cityIndexDictionary.GetValueOrDefault(to));
+        return path;
+    }
+
+    private List<Models.Edge> findEdges(Shipment shipment)
+    {
 
         //Fetch our own edges from the database
         var edges = _context.edges.ToList();
 
         //Fetch the remaining edges from EI and OA API
-        //var EIedges = getEIedges();
-        //var OAedges = getOAedges();
-        //edges.addAll(EIedges);
-        //edges.addAll(OAedges);
-
-        // Create a new Graph object
-        var graph = new Graph<string, string>();
-
-        //Add all of the cities as nodes to the graph
-        foreach (var city in cities)
+        Company[] allowedCompanies = shipmentService.findAllowedExternalCompanies(shipment);
+        if (allowedCompanies.Contains(Company.EITC))
         {
-            graph.AddNode(city.City);
+            edges.AddRange(getEIedges());
         }
-
-        // Add the edges to the graph and reverse edges
-        /*
-        if (isUsingCost) {
-            foreach (var edge in edges)
-            {
-                graph.Connect(edge.city1, edge.city2, edge.cost, "Cost");
-                graph.Connect(edge.city2, edge.city1, edge.cost, "Cost");
-            }
-        }
-        else
+        if (allowedCompanies.Contains(Company.OA))
         {
-            foreach (var edge in edges)
-            {
-                graph.Connect(edge.city1, edge.city2, edge.TimeHours, "Time");
-                graph.Connect(edge.city2, edge.city1, edge.TimeHours, "Time");
-            }
-
-        }*/
-        return graph;
-    }
-
-    public void getEIedges()
-    {
-        //Contruct the API call with parameters needed
-
-    }
-
-    public void getOAedges()
-    {
-        //Contruct the API call with parameters needed
-
-    }
-
-    public ShortestPathResult getShortestPath(Graph graph, uint from, uint to)
-    {
-        var path = graph.Dijkstra(from, to);
-        return path;
+            edges.AddRange(getOAedges());
+        }
+        return edges;
     }
 
 
