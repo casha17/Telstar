@@ -16,6 +16,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IshipmentService, ShipmentSevice>();
 builder.Services.AddTransient<IGraphingService, GraphingService>();
+builder.Services.AddTransient<IReportService, ReportService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

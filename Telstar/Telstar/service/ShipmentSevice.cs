@@ -71,7 +71,7 @@ namespace TelstarLogistics.service
 
         private bool isSuitableForOA(Shipment shipment)
         {
-            return true;// shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 && shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() ;
+            return true; //shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 && shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() ;
         }
     }
 }
