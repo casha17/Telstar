@@ -1,5 +1,5 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -14,5 +14,23 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: #4C75DD;
+}
+
+image {
+    height: 10px;
+    transform: rotate(90deg);
+}
+
+radiobuttons {
+    padding: 30px; 
+}
+
+.form-check {
+    margin: 20px;
+}
+
+.spacer {
+    margin-top: 30px;
 }
