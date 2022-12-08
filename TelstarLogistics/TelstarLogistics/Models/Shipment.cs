@@ -11,5 +11,6 @@
         public double totalCostInUSD { get; set; }
         public double paidToOAInUSD { get; set; }
         public double paidToEICInUSD { get; set; }
+        public Type type { get; set; }
     }
 }
