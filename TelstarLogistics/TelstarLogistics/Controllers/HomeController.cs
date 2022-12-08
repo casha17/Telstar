@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using TelstarLogistics.Models;
+using TelstarLogistics.service;
 
 namespace TelstarLogistics.Controllers
 {
@@ -10,11 +11,12 @@ namespace TelstarLogistics.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private DbContext dbContext { get; set; }
+        private IshipmentService shipmentService { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IshipmentService ishipmentService)
         {
             _logger = logger;
-
+            shipmentService= ishipmentService;
             
         }
 

@@ -1,12 +1,12 @@
 ﻿namespace TelstarLogistics.Models
 {
-    public class destination
+    public class Destination
     {
-        public string city { get; set; }
+        public string City { get; set; }
 
-        public Guid id { get; set; }
+        public Guid Id { get; set; }
 
-        public List<edge> fromEdges { get; set; }
-        public List<edge> toEdges { get; set; }
+        public List<Edge> FromEdges { get; set; }
+        public List<Edge> ToEdges { get; set; }
     }
 }

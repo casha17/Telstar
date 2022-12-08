@@ -1,16 +1,16 @@
 ﻿namespace TelstarLogistics.Models
 {
-    public class edge
+    public class Edge
     {
         public Guid Id { get; set; }
 
-        public string to { get; set; }
-        public string from { get; set; }
-        public double cost { get; set; }
-        public double timeHours { get; set; }
+        public string To { get; set; }
+        public string From { get; set; }
+        public double Cost { get; set; }
+        public double TimeHours { get; set; }
 
-        public destination fromDestination { get; set; }
-        public destination toDestination { get; set; }
+        public Destination FromDestination { get; set; }
+        public Destination ToDestination { get; set; }
 
     }
 }
