@@ -23,16 +23,16 @@ namespace Telstar.Pages
 
         public void OnGet()
         {
-            var data = TempData["path"] as string;
-            AlgorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(data);
-            TempData["path"] = JsonSerializer.Serialize(AlgorithmResult);
+            var cookieValue = Request.Cookies["shipment"];
+            AlgorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+            
         }
 
         public IActionResult OnPost()
         {
-            var data = TempData["path"] as string;
-            var result = JsonSerializer.Deserialize<AlgorithmResult>(data);
-            if(result.shipment != null)
+            var cookieValue = Request.Cookies["shipment"];
+            var result = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+            if (result.shipment != null)
             {
                 shipService.CreateShipment(result.shipment);
              

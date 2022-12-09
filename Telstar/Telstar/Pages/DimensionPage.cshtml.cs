@@ -9,19 +9,24 @@ namespace Telstar.Pages
     {
         public void OnGet()
         {
+            var cookieValue = Request.Cookies["shipment"];
+            var algorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+            
         }
 
         public IActionResult OnPost(string weight, string height, string length, string width)
         {
-            var data = TempData["path"] as string;
-            var algorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(data);
+
+            var cookieValue = Request.Cookies["shipment"];
+            var algorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+            
 
             algorithmResult.shipment.widthInCm = Convert.ToDouble(width);
             algorithmResult.shipment.heightInCm = Convert.ToDouble(height); 
             algorithmResult.shipment.lengthInCm =  Convert.ToDouble(length);
             algorithmResult.shipment.weightInKg= Convert.ToDouble(weight);
 
-            TempData["path"] = JsonSerializer.Serialize(algorithmResult);
+            Response.Cookies.Append("shipment", JsonSerializer.Serialize(algorithmResult));
             return RedirectToPage("ChooseRoute");
 
 

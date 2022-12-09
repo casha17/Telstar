@@ -11,29 +11,36 @@ namespace Telstar.Pages
         public AlgorithmResult AlgorithmResult { get; set; }
         public void OnGet()
         {
-            var data = TempData["path"] as string;
-            AlgorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(data);
-            TempData["path"] = JsonSerializer.Serialize(AlgorithmResult);
+            var cookieValue = Request.Cookies["shipment"];
+            AlgorithmResult = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+
+            
             
         }
 
         public IActionResult OnPostFastest()
         {
-            var data = TempData["path"] as string;
-            var algorithmResult1 = JsonSerializer.Deserialize<AlgorithmResult>(data);
-            algorithmResult1.cheapest = false;
-            algorithmResult1.fastest = true;
-            TempData["path"] = JsonSerializer.Serialize(algorithmResult1);
+            var cookieValue = Request.Cookies["shipment"];
+            var algorithmresult = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+
+
+            algorithmresult.cheapest = false;
+            algorithmresult.fastest = true;
+
+            Response.Cookies.Append("shipment", JsonSerializer.Serialize(algorithmresult));
             return RedirectToPage("Summary");
         }
 
         public IActionResult OnPostCheapest()
         {
-            var data = TempData["path"] as string;
-            var algorithmResult1 = JsonSerializer.Deserialize<AlgorithmResult>(data);
-            algorithmResult1.cheapest= true;
-            algorithmResult1.fastest= false;
-            TempData["path"] = JsonSerializer.Serialize(algorithmResult1);
+            var cookieValue = Request.Cookies["shipment"];
+            var algorithmresult = JsonSerializer.Deserialize<AlgorithmResult>(cookieValue);
+
+
+            algorithmresult.cheapest = true;
+            algorithmresult.fastest = false;
+
+            Response.Cookies.Append("shipment", JsonSerializer.Serialize(algorithmresult));
             return RedirectToPage("Summary");
         }
 
