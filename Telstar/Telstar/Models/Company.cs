@@ -2,7 +2,7 @@
 {
     public class Company
     {
-        private static Uri EITC_URI = new UriBuilder("http://wa-eit-dk1.azurewebsites.net").Uri;
+        private static Uri EITC_URI = new UriBuilder("http://wa-eit-dk1.azurewebsites.net/api/getAvailableRoutes").Uri;
         private static Uri OA_URI = new UriBuilder("https://wa-oa-dk1.azurewebsites.net/external/getconnections").Uri;
         public static Company EITC = new Company("EITC", EITC_URI);
         public static Company OA = new Company("OA", OA_URI);
