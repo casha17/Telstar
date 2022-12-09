@@ -2,11 +2,11 @@
 {
     public class ShipmentType
     {
-        public static string ANIMAL_TYPE = "animal";
-        public static string FRAGILE_TYPE = "fragile";
-        public static string REFRIGERATED_TYPE = "refrigerated";
-        public static string REGULAR_TYPE = "regular";
-        public static string WEAPONS_TYPE = "weapons";
+        public static string ANIMAL_TYPE = "Live Animals";
+        public static string FRAGILE_TYPE = "Cautious Parcels";
+        public static string REFRIGERATED_TYPE = "Refrigerated Goods";
+        public static string REGULAR_TYPE = "Regular";
+        public static string WEAPONS_TYPE = "Weapons";
 
         public Guid id { get; set; }
         public string name { get; set; }

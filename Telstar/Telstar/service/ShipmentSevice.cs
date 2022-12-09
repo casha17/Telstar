@@ -34,7 +34,7 @@ namespace Telstar.service
 
         public List<Company> findAllowedExternalCompanies(Shipment shipment)
         {
-            var result = new List<Company>();
+            List<Company> result = new List<Company>();
             if (isSuitableForEITC(shipment))
             {
                 result.Add(Company.EITC);

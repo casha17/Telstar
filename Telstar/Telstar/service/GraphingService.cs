@@ -1,6 +1,10 @@
 ﻿using Dijkstra.NET.Graph;
 using Dijkstra.NET.ShortestPath;
+using Humanizer;
+using System.ComponentModel;
+using System.Reflection.Metadata.Ecma335;
 using Telstar.Data;
+using Telstar.DTOs;
 using Telstar.Models;
 using Telstar.service;
 
@@ -11,10 +15,12 @@ public class GraphingService : IGraphingService
 {
     private ApplicationDbContext _context;
     private IshipmentService shipmentService;
-    public GraphingService(ApplicationDbContext context, IshipmentService shipmentService)
+    private ICalloutService calloutService;
+    public GraphingService(ApplicationDbContext context, IshipmentService shipmentService, ICalloutService calloutService)
     {
         _context = context;
         this.shipmentService = shipmentService;
+        this.calloutService = calloutService;
     }
 
     public Graph<uint, string> buildGraph(Shipment shipment, List<Destination> cities)
@@ -58,16 +64,27 @@ public class GraphingService : IGraphingService
 
     }
 
-    public List<Models.Edge> getEIedges()
+    public List<Models.Edge> getEIedges(Shipment shipment)
     {
         //Contruct the API call with parameters needed
-        return new List<Models.Edge>();
+        var task = Task.Run(() => this.calloutService.calloutEITC(shipment));
+        task.Wait();
+        List<EdgeResponseDTO> edgeResponseDTOs = task.Result;
+        return edgeResponseDTOs.Select(e => new Models.Edge() { To = e.City1, From = e.City2, Cost = Decimal.ToDouble(e.CostInUSD), TimeHours = Decimal.ToDouble(e.TimeInHours) }).ToList();
     }
 
-    public List<Models.Edge> getOAedges()
+    public List<Models.Edge> getOAedges(Shipment shipment)
     {
         //Contruct the API call with parameters needed
-        return new List<Models.Edge>();
+
+        //Contruct the API call with parameters needed
+        
+        var task = Task.Run(() => this.calloutService.calloutOA(shipment));
+        task.Wait();
+        List<EdgeResponseDTO> edgeResponseDTOs = task.Result;
+        return edgeResponseDTOs.Select(e => new Models.Edge() { To = e.City1, From = e.City2, Cost = Decimal.ToDouble(e.CostInUSD), TimeHours = Decimal.ToDouble(e.TimeInHours) }).ToList();
+        
+        // return new List<Models.Edge>() { };
     }
 
     public ShortestPathResult getCheapestPath(Shipment shipment, string from, string to)
@@ -114,17 +131,23 @@ public class GraphingService : IGraphingService
         var edges = _context.edges.ToList();
 
         //Fetch the remaining edges from EI and OA API
-        var allowedCompanies = shipmentService.findAllowedExternalCompanies(shipment);
+        List<Company> allowedCompanies = shipmentService.findAllowedExternalCompanies(shipment);
         if (allowedCompanies.Contains(Company.EITC))
         {
-            edges.AddRange(getEIedges());
+            edges.AddRange(getEIedges(shipment));
         }
         if (allowedCompanies.Contains(Company.OA))
         {
-            edges.AddRange(getOAedges());
+            edges.AddRange(getOAedges(shipment));
         }
-        return edges;
+        var camelCaseEdges = edges.Select(edge => new Models.Edge() { From = this.ConvertToCamelCase(edge.From), To = this.ConvertToCamelCase(edge.To), Cost = edge.Cost, TimeHours = edge.TimeHours }).ToList();
+        return  camelCaseEdges;
     }
+
+    private string ConvertToCamelCase(String input)
+    {
+        return String.Join(" ", input.Split(" ").Select(namePart => namePart.Substring(0, 1).ToUpper() + namePart.Substring(1).ToLower()));
+    } 
 
 
 }
