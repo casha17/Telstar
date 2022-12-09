@@ -58,6 +58,8 @@ namespace Telstar.Pages
             var cheapest =  graphingService1.getCheapestPath(shipment, toDestination, fromDestination);
             var path = quickest.GetPath();
 
+            
+
             var obj = new AlgorithmResult
             {
                 Cheapest = cheapest.Distance / 100.0,
@@ -65,7 +67,8 @@ namespace Telstar.Pages
                 shipment= shipment,
             };
 
-            TempData["path"] = JsonSerializer.Serialize(obj);
+            
+            Response.Cookies.Append("shipment", JsonSerializer.Serialize(obj));
             return RedirectToPage("/DimensionPage");
 
         }
