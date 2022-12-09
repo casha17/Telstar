@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Telstar.test
 {
     [TestClass]
-    public class UnitTest1
+    public class EnsureCompaniesAreAllowedToBookShipping
     {
 
         private IshipmentService shipmentService { get; set; }

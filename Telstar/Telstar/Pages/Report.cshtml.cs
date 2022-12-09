@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Telstar.service;
-using TelstarLogistics.service;
+using Telstar.service;
 
 namespace Telstar.Pages
 {
