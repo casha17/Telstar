@@ -2,7 +2,7 @@
 using Telstar.Data;
 using Telstar.Models;
 
-namespace TelstarLogistics.service
+namespace Telstar.service
 {
     public class ShipmentSevice : IshipmentService
     {
@@ -12,7 +12,9 @@ namespace TelstarLogistics.service
         }
         public Shipment CreateShipment(Shipment shipment)
         {
-            throw new NotImplementedException();
+            _dbContext.Add<Shipment>(shipment);
+            _dbContext.SaveChanges();
+            return shipment;
         }
 
         public List<Destination> GetDestination()
@@ -24,22 +26,22 @@ namespace TelstarLogistics.service
         {
             throw new NotImplementedException();
         }
-        /*
+        
         public bool isSuitableForTelstar (Shipment shipment, float transportDurationInHours)
         {
-            return shipment.weightInKg <= 40 && (shipment.type.name.ToLower() == Telstar.Models.Type.ANIMAL_TYPE.ToLower() ? transportDurationInHours <= 30 : true);
-        }*/
+            return shipment.weightInKg <= 40 && (shipment.type.name.ToLower() == Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() ? transportDurationInHours <= 30 : true);
+        }
 
-        public Company[] findAllowedExternalCompanies(Shipment shipment)
+        public List<Company> findAllowedExternalCompanies(Shipment shipment)
         {
-            Company[] result = { };
+            var result = new List<Company>();
             if (isSuitableForEITC(shipment))
             {
-                result.Append(Company.EITC);
+                result.Add(Company.EITC);
             }
             if (isSuitableForOA(shipment))
             {
-                result.Append(Company.OA);
+                result.Add(Company.OA);
             }
             return result;
         }
@@ -66,12 +68,12 @@ namespace TelstarLogistics.service
 
         private bool isSuitableForEITC(Shipment shipment)
         {
-            return true; //shipment.weightInKg <= 100;
+            return shipment.weightInKg <= 100;
         }
 
         private bool isSuitableForOA(Shipment shipment)
         {
-            return true;// shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 && shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() ;
+            return shipment.weightInKg <= 20 && shipment.lengthInCm <= 200 && shipment.type.name.ToLower() != Telstar.Models.ShipmentType.ANIMAL_TYPE.ToLower() ;
         }
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Telstar.Data;
 using Telstar.service;
-using TelstarLogistics.service;
+using Telstar.service;
 
 var builder = WebApplication.CreateBuilder(args);
 

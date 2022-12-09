@@ -11,7 +11,9 @@ namespace TelstarLogistics.service
         }
         public Shipment CreateShipment(Shipment shipment)
         {
-            throw new NotImplementedException();
+            _dbContext.Add(shipment);
+            _dbContext.SaveChanges();
+            return shipment;
         }
 
         public List<Destination> GetDestination()

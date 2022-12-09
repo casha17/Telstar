@@ -1,6 +1,6 @@
 ﻿using Telstar.Models;
 
-namespace TelstarLogistics.service
+namespace Telstar.service
 {
     public interface IshipmentService
     {
@@ -11,7 +11,7 @@ namespace TelstarLogistics.service
         public List<string> GetRutes();
 
         //public bool isSuitableForTelstar(Shipment shipment, float transportDurationInHours);
-        public Company[] findAllowedExternalCompanies(Shipment shipment);
+        public List<Company> findAllowedExternalCompanies(Shipment shipment);
 
         public double calculateAdjustedPrice(Shipment shipment, Company company, double totalPrice);
     }

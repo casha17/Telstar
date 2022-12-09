@@ -2,7 +2,7 @@
 using Dijkstra.NET.ShortestPath;
 using Telstar.Data;
 using Telstar.Models;
-using TelstarLogistics.service;
+using Telstar.service;
 
 namespace Telstar.service;
 
@@ -112,7 +112,7 @@ public class GraphingService : IGraphingService
         var edges = _context.edges.ToList();
 
         //Fetch the remaining edges from EI and OA API
-        Company[] allowedCompanies = shipmentService.findAllowedExternalCompanies(shipment);
+        var allowedCompanies = shipmentService.findAllowedExternalCompanies(shipment);
         if (allowedCompanies.Contains(Company.EITC))
         {
             edges.AddRange(getEIedges());

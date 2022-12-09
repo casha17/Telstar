@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TelstarLogistics.service;
+using Telstar.service;
 
 namespace TelstarLogistics.Controllers
 {

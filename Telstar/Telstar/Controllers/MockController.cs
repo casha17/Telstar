@@ -4,7 +4,7 @@ using Telstar.Data;
 using Telstar.DTOs;
 using Telstar.Models;
 using Telstar.service;
-using TelstarLogistics.service;
+using Telstar.service;
 using Type = System.Type;
 
 namespace Telstar.Controllers
