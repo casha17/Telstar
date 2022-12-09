@@ -11,7 +11,9 @@
                 <li class="list-group-item summary-listitem"><p class="summary-p">Time: @Html.DisplayFor(e => e.AlgorithmResult.Fastest)</p><p class="summary-pr" name="time"></p><p class="summary-p">Price:@Html.DisplayFor(e => e.AlgorithmResult.Cheapest) </p><p class="summary-pr" name="price"></p></li>
             </ul>
         </Center>
-        <button type="button" class="btn btn-secondary spacer">Back</button>
+        <a href="/ChooseRoute">
+            <button type="button" class="btn btn-secondary spacer">Back</button>
+        </a>
         <form method="post">
             <button type="submit" class="btn btn-warning spacer">Book</button>
         </form>
