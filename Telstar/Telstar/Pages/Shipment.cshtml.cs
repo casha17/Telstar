@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using Telstar.Models;
 using Telstar.service;
-using TelstarLogistics.service;
+using Telstar.service;
 
 namespace Telstar.Pages
 {
