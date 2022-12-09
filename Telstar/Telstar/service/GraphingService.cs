@@ -79,13 +79,11 @@ public class GraphingService : IGraphingService
         Dictionary<String, uint> cityIndexDictionary = new Dictionary<String, uint>();
         for (uint i = 0; i < cities.Count; i++)
         {
-            cityIndexDictionary.Add(cities[(int)i].City, i+1);
+            cityIndexDictionary.Add(cities[(int)i].City, i);
         }
         var graph = this.buildGraph(shipment, cities);
         var connectedGraph = this.connectLowestCostGraph(graph, cityIndexDictionary, shipment);
-        var toCity = cityIndexDictionary.GetValueOrDefault(to) + 1;
-        var fromCity = cityIndexDictionary.GetValueOrDefault(from) + 1;
-        var path = connectedGraph.Dijkstra(fromCity, toCity);
+        var path = connectedGraph.Dijkstra(cityIndexDictionary.GetValueOrDefault(from), cityIndexDictionary.GetValueOrDefault(to));
         return path;
     }
 
@@ -105,7 +103,7 @@ public class GraphingService : IGraphingService
         var connectedGraph = this.connectShortestTimeGraph(graph, cityIndexDictionary, shipment);
         var toCity = cityIndexDictionary.GetValueOrDefault(to) +1;
         var fromCity = cityIndexDictionary.GetValueOrDefault(from) +1;
-        var path = connectedGraph.Dijkstra(fromCity, toCity);
+        var path = connectedGraph.Dijkstra(cityIndexDictionary.GetValueOrDefault(from), cityIndexDictionary.GetValueOrDefault(to));
         return path;
     }
 
