@@ -15,12 +15,12 @@ namespace Telstar.Pages
 
         public ReportModel(IReportService iReportService ) {
             _Ireportservice = iReportService;
-            totalProfit = _Ireportservice.GetTotalPrice();
-            totalBookings = _Ireportservice.GetTotalBookings();
         }
 
         public void OnGet()
         {
+            totalProfit = _Ireportservice.GetTotalPrice();
+            totalBookings = _Ireportservice.GetTotalBookings();
         }
     }
 }
